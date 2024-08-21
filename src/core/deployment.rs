@@ -1,6 +1,6 @@
 
 use serde::{Deserialize, Serialize};
-use crate::models::{BaseMetadata, Container, Env, Labels, MatchLabels, Selector, Spec, Template, TemplateMetadata, TemplateSpec};
+use crate::core::models::{BaseMetadata, Container, Env, Labels, MatchLabels, Selector, Spec, Template, TemplateMetadata, TemplateSpec};
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub struct Deployment {

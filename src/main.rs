@@ -1,9 +1,7 @@
-mod deployment;
-mod service;
-mod models;
+mod core;
 
-use deployment::Deployment;
-use service::Service;
+use core::deployment::Deployment;
+use core::service::Service;
 
 fn main() {
     let d = Deployment::new("test".to_string(), "test:1.0.0".to_string());

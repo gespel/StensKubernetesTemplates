@@ -1,6 +1,6 @@
 
 use serde::{Deserialize, Serialize};
-use crate::models::{BaseMetadata, Labels, Port, ServiceSelector, ServiceSpec};
+use crate::core::models::{BaseMetadata, Labels, Port, ServiceSelector, ServiceSpec};
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub struct Service {
