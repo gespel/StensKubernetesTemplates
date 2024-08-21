@@ -4,7 +4,8 @@ use crate::models::{BaseMetadata, Labels, Port, ServiceSelector, ServiceSpec};
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub struct Service {
-    apiVersion: String,
+    #[serde(rename = "apiVersion")]
+    api_version: String,
     kind: String,
     metadata: BaseMetadata,
     spec: ServiceSpec
@@ -13,7 +14,7 @@ pub struct Service {
 impl Service {
     pub fn new(name: String, target_backend: String) -> Service {
         Service {
-            apiVersion: "v1".to_string(),
+            api_version: "v1".to_string(),
             kind: "Service".to_string(),
             metadata: BaseMetadata {
                 name: name.clone(),
@@ -29,10 +30,10 @@ impl Service {
                     Port {
                         protocol: "TCP".to_string(),
                         port: 80,
-                        targetPort: 8080,
+                        target_port: 8080,
                     }
                 ],
-                typeName: "ClusterIP".to_string(),
+                type_name: "ClusterIP".to_string(),
             },
         }
     }

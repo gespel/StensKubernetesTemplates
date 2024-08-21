@@ -4,7 +4,8 @@ use crate::models::{BaseMetadata, Container, Env, Labels, MatchLabels, Selector,
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub struct Deployment {
-    apiVersion: String,
+    #[serde(rename = "apiVersion")]
+    api_version: String,
     kind: String,
     metadata: BaseMetadata,
     spec: Spec
@@ -13,7 +14,7 @@ pub struct Deployment {
 impl Deployment {
     pub fn new(name: String, image: String) -> Deployment {
         Deployment{
-            apiVersion: "apps/v1".to_string(),
+            api_version: "apps/v1".to_string(),
             kind: "Deployment".to_string(),
             metadata: BaseMetadata {
                 name: name.clone(),
@@ -24,7 +25,7 @@ impl Deployment {
             spec: Spec {
                 replicas: 1,
                 selector: Selector {
-                    matchLabels: MatchLabels {
+                    match_labels: MatchLabels {
                         name: name.clone()
                     }
                 },
@@ -37,8 +38,8 @@ impl Deployment {
                     spec: TemplateSpec {
                         containers: vec![
                             Container {
-                                name: "test".to_string(),
-                                image: "test:1.0.0".to_string(),
+                                name: name.clone(),
+                                image,
                                 env: vec![
                                     Env {
                                         name: "TEST_VAR".to_string(),

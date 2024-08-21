@@ -39,7 +39,8 @@ pub struct MatchLabels {
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
 pub struct Selector {
-    pub(crate) matchLabels: MatchLabels
+    #[serde(rename = "matchLabels")]
+    pub(crate) match_labels: MatchLabels
 
 }
 
@@ -47,7 +48,8 @@ pub struct Selector {
 pub struct Port {
     pub(crate) protocol: String,
     pub(crate) port: i32,
-    pub(crate) targetPort: i32
+    #[serde(rename = "targetPort")]
+    pub(crate) target_port: i32
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
@@ -60,7 +62,7 @@ pub struct ServiceSpec {
     pub(crate) selector: ServiceSelector,
     pub(crate) ports: Vec<Port>,
     #[serde(rename = "type")]
-    pub(crate) typeName: String
+    pub(crate) type_name: String
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Debug)]
