@@ -2,6 +2,8 @@
 name = "skt"
 version = "0.1.0"
 edition = "2021"
+description = "A simple template creator for kubernetes resources"
+license = "MIT"
 
 [dependencies]
 serde = { version = "1.0.208", features = ["derive"] }
