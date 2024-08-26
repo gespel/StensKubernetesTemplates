@@ -1,7 +1,5 @@
-mod core;
-
-use core::deployment::Deployment;
-use core::service::Service;
+use sktlib::core::deployment::Deployment;
+use sktlib::core::service::Service;
 
 fn main() {
     let d = Deployment::new("test".to_string(), "test:1.0.0".to_string());

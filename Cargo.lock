@@ -186,6 +186,17 @@ version = "0.1.0"
 dependencies = [
  "serde",
  "serde_yml",
+ "sktlib",
+]
+
+[[package]]
+name = "sktlib"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e025168816c6c17f69fbb7b26e0fc1bea586de76b8d54af83886d7210a10f7d7"
+dependencies = [
+ "serde",
+ "serde_yml",
 ]
 
 [[package]]
