@@ -1,9 +1,9 @@
 [package]
 name = "skt"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "A simple template creator for kubernetes resources"
 license = "MIT"
 
 [dependencies]
-sktlib = "0.1.2"
+sktlib = "0.1.1"
