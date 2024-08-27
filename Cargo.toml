@@ -6,4 +6,4 @@ description = "A simple template creator for kubernetes resources"
 license = "MIT"
 
 [dependencies]
-sktlib = "0.1.1"
+sktlib = "0.1.2"
